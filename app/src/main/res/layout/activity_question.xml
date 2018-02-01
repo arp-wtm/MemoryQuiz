@@ -2,7 +2,6 @@
 
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
 
     android:layout_width="match_parent"
@@ -16,8 +15,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="end"
-        android:text="QUESTION NUMBER"
-        android:textAlignment="viewEnd" />
+        android:text="@string/question_number"
+        android:textAlignment="viewEnd"
+        android:hint="@string/question_number" />
 
     <EditText
         android:id="@+id/questionET"
@@ -38,21 +38,21 @@
             android:id="@+id/answerRB0"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RadioButton"
+            android:text="@string/radiobutton0"
             android:textAppearance="?android:textAppearanceMedium" />
 
         <RadioButton
             android:id="@+id/answerRB1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RadioButton"
+            android:text="@string/radiobutton1"
             android:textAppearance="?android:textAppearanceMedium" />
 
         <RadioButton
             android:id="@+id/answerRB2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RadioButton"
+            android:text="@string/radiobutton2"
             android:textAppearance="?android:textAppearanceMedium" />
     </RadioGroup>
 
@@ -62,6 +62,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical|center_horizontal"
         android:onClick="doNext"
-        android:text="NEXT" />
+        android:text="@string/next" />
 
 </LinearLayout>

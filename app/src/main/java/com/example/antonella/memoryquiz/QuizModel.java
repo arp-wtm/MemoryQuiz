@@ -42,6 +42,7 @@ class QuizModel {
         }
     }
 
+    // is called by checkAnswer method of QuestionActivity control right answer
     void incScore() {
         setScore(getScore() + 1);
     }
@@ -66,7 +67,7 @@ class QuizModel {
         this.currentQuestion = currentQuestion;
     }
 
-    public Ques[] getQuesiti() {
+    private Ques[] getQuesiti() {
         return quesiti;
     }
 

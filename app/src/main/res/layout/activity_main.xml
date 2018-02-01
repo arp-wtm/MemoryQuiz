@@ -12,16 +12,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="LOOK WITH ATTENTION"
-        android:layout_above="@id/imageView"
+        android:text="@string/observe"
+        android:textAllCaps="true"
         android:textSize="18sp" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_weight="1"
         android:scaleType="centerCrop"
+        android:contentDescription="@string/android_versions_and_keywords"
         app:srcCompat="@drawable/android_versions_keywords" />
 
     <Button
@@ -29,6 +30,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:onClick="setSecondScreen"
-        android:text="Click here when ready" />
+        android:text="@string/click_here_when_ready" />
 
 </LinearLayout>

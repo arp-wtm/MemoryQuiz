@@ -26,7 +26,7 @@ public class QuestionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        /*
+        /**
          *this method change the view of the user with second screen
          * and update the display information
          */
@@ -34,34 +34,39 @@ public class QuestionActivity extends AppCompatActivity {
         updateData();
     }
 
-    /*
-     *
+    /**
+     * fill the screen with the new data question
     */
+
     void updateData() {
         // displays number of current question
         //
-        EditText questionNumber = (EditText) findViewById(R.id.numQuestionPT);
-        questionNumber.setText((qm.getCurrentQuestion() + 1) + "/" + qm.getNumQuestion());
+        EditText questionNumber = findViewById(R.id.numQuestionPT);
+        questionNumber.setText((qm.getCurrentQuestion() + 1) + getString(R.string.slash) + qm.getNumQuestion());
 
         // displays text of current question
-        EditText questionView = (EditText) findViewById(R.id.questionET);
+        EditText questionView = findViewById(R.id.questionET);
         questionView.setText(qm.getQuesito().getDomanda());
 
 
         // display text description of the three radio button for each answer
 
-        item0 = (RadioButton) findViewById(R.id.answerRB0);
+        item0 = findViewById(R.id.answerRB0);
         item0.setText(qm.getQuesito().getAnswerItem()[0]);
         // display text description of second radio button answer
-        item1 = (RadioButton) findViewById(R.id.answerRB1);
+        item1 = findViewById(R.id.answerRB1);
         item1.setText(qm.getQuesito().getAnswerItem()[1]);
         // display text description of three radio button answer
-        item2 = (RadioButton) findViewById(R.id.answerRB2);
+        item2 = findViewById(R.id.answerRB2);
         item2.setText(qm.getQuesito().getAnswerItem()[2]);
         right = qm.getQuesito().getRightAnswer();
 
 
     }
+
+    /**
+     * called by user when button NEXT is pressed
+     */
 
     public void doNext(View view) {
         updateScore();
@@ -73,12 +78,16 @@ public class QuestionActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * called by user when button NEXT is pressed on last question
+     */
+
     private void displayScore() {
         //final int time = Toast.LENGTH_LONG;
         //Toast scoreToast = Toast.makeText(this, "YOUR SCORE IS " + qm.getScore() + "/" + qm.getNumQuestion(),time);
         //scoreToast.show();
         AlertDialog.Builder scoreMessage = new AlertDialog.Builder(QuestionActivity.this);
-        scoreMessage.setMessage("YOUR SCORE IS " + qm.getScore() + "/" + qm.getNumQuestion());
+        scoreMessage.setMessage(getString(R.string.yourScoreIs) + qm.getScore() + "/" + qm.getNumQuestion());
 
         AlertDialog alert = scoreMessage.create();
         alert.show();
