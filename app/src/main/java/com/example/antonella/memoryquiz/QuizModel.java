@@ -88,6 +88,13 @@ class Ques {
     private String[] answerItem = new String[getANSWER_NUMBER()];
     private int rightAnswer;
 
+    /**
+     * @param dom           where is stored the text of the question
+     * @param r0            that is the choice 1 answer
+     * @param r1            that is the choice 2 answer
+     * @param r2            that is the choice 3 answer
+     * @param rightPosition that is the number of the right answer
+     */
     Ques(String dom, String r0, String r1, String r2, int rightPosition) {
         domanda = dom;
         answerItem[0] = r0;
