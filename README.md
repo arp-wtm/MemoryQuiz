@@ -1,5 +1,5 @@
 # MemoryQuiz  <br>
-ADVICE: this is create by beginner studentfor project 3 Udacity Android Basic challenge, Object Oriented Programming, well accepted corrections and suggestions <br>
+ADVICE: this is create by beginner student for project 3 Udacity Android Basic challenge, Object Oriented Programming.<br> Well accepted corrections and suggestions <br>
 This APP is a simple memory test: observe an image, then answer to questions.<br>
 The java code is divided into 3 different files so i try to implement a Model View Controller: <br>
  1.) the usual MainActivity (opens the first screen with the image to observe and a button to start quiz. When start button is clicked, an intent is send to QuestionActivity)<br>
