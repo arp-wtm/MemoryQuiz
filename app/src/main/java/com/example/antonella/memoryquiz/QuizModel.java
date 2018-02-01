@@ -7,29 +7,29 @@ package com.example.antonella.memoryquiz;
  * the new information
  */
 
-public class QuizModel {
+class QuizModel {
 
     /**
-     * this is the structure that will contain 5
+     * this is the structure that will contain 4
      * different element of type Ques
      */
 
     private static int NUM_QUESTION = 4;
     private int score = 0;
     private int currentQuestion = 0;
-    Ques[] quesiti = new Ques[NUM_QUESTION];
+    private Ques[] quesiti = new Ques[NUM_QUESTION];
 
     QuizModel() {
         setScore(0);
         setCurrentQuestion(0);
-        quesiti[0] = new Ques("quante case gialle vedi?", "3", "nessuna", "8", 0);
-        quesiti[1] = new Ques("quante case verdi vedi?", "3", "nessuna", "8", 0);
-        quesiti[2] = new Ques("quante case rosse vedi?", "3", "nessuna", "8", 0);
-        quesiti[3] = new Ques("quante case rosse vedi?", "3", "nessuna", "8", 0);
+        getQuesiti()[0] = new Ques("how many different java language keywords are into the image? ", "3", "no", "9", 2);
+        getQuesiti()[1] = new Ques("Nougat is the name of the 7 version of Android mobile operating system. How many times you can see into the initial screen?", "3", "none", "8", 1);
+        getQuesiti()[2] = new Ques("implements is a reserved Java keyword. It appears 3 times", "it is not a keyword, 3 times present", "it is a keyword, not present ", "it is a keyword, twice present", 1);
+        getQuesiti()[3] = new Ques("Ringo is the last Android version. How many times does it appear? ", "it is not a name version, it is not present ", "2", "3", 0);
     }
 
     Ques getQuesito() {
-        return quesiti[getCurrentQuestion()];
+        return getQuesiti()[getCurrentQuestion()];
     }
 
     boolean isLast() {
@@ -46,24 +46,32 @@ public class QuizModel {
         setScore(getScore() + 1);
     }
 
-    public int getScore() {
+    int getScore() {
         return score;
     }
 
-    public void setScore(int score) {
+    private void setScore(int score) {
         this.score = score;
     }
 
-    public int getCurrentQuestion() {
+    int getCurrentQuestion() {
         return currentQuestion;
     }
 
-    public int getNumQuestion() {
+    int getNumQuestion() {
         return NUM_QUESTION;
     }
 
-    public void setCurrentQuestion(int currentQuestion) {
+    private void setCurrentQuestion(int currentQuestion) {
         this.currentQuestion = currentQuestion;
+    }
+
+    public Ques[] getQuesiti() {
+        return quesiti;
+    }
+
+    public void setQuesiti(Ques[] quesiti) {
+        this.quesiti = quesiti;
     }
 }
 
@@ -87,7 +95,7 @@ class Ques {
         rightAnswer = rightPosition;
     }
 
-    public int getANSWER_NUMBER() {
+    private int getANSWER_NUMBER() {
         return ANSWER_NUMBER;
     }
 
@@ -95,7 +103,7 @@ class Ques {
         this.ANSWER_NUMBER = ANSWER_NUMBER;
     }
 
-    public String getDomanda() {
+    String getDomanda() {
         return domanda;
     }
 
@@ -103,7 +111,7 @@ class Ques {
         this.domanda = domanda;
     }
 
-    public String[] getAnswerItem() {
+    String[] getAnswerItem() {
         return answerItem;
     }
 
@@ -111,7 +119,7 @@ class Ques {
         this.answerItem = answerItem;
     }
 
-    public int getRightAnswer() {
+    int getRightAnswer() {
         return rightAnswer;
     }
 

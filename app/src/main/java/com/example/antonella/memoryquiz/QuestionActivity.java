@@ -18,7 +18,7 @@ import org.w3c.dom.Text;
 public class QuestionActivity extends AppCompatActivity {
     QuizModel qm = new QuizModel();
     int score = 0;
-    RadioButton item0,item1,item2;
+    RadioButton item0, item1, item2;
     int right;
 
 
@@ -41,16 +41,14 @@ public class QuestionActivity extends AppCompatActivity {
         // displays number of current question
         //
         EditText questionNumber = (EditText) findViewById(R.id.numQuestionPT);
-        questionNumber.setText((qm.getCurrentQuestion()+ 1) + "/" + qm.getNumQuestion());
+        questionNumber.setText((qm.getCurrentQuestion() + 1) + "/" + qm.getNumQuestion());
 
         // displays text of current question
         EditText questionView = (EditText) findViewById(R.id.questionET);
         questionView.setText(qm.getQuesito().getDomanda());
 
 
-        //RadioGroup questRG = (RadioGroup) findViewById(R.id.questionRadioGroup);
-
-        // display text description of first radio button answer
+        // display text description of the three radio button for each answer
 
         item0 = (RadioButton) findViewById(R.id.answerRB0);
         item0.setText(qm.getQuesito().getAnswerItem()[0]);
@@ -64,14 +62,14 @@ public class QuestionActivity extends AppCompatActivity {
 
 
     }
-    
+
     public void doNext(View view) {
         updateScore();
         if (qm.isLast()) {
             displayScore();
         } else {
             nextQuestion();
-            
+
         }
     }
 
@@ -86,25 +84,33 @@ public class QuestionActivity extends AppCompatActivity {
         alert.show();
 
 
-
-
     }
+
+    /**
+     * updateScore method control if the
+     * right answer position is equal to
+     * number of the radio button checked
+     */
     private void updateScore() {
-        switch(right){
-            case 0: if (item0.isChecked()){
-                qm.incScore();
-            }
+        switch (right) {
+            case 0:
+                checkAnswer(item0);
                 break;
-            case 1: if (item1.isChecked()){
-                qm.incScore();
-            }
+            case 1:
+                checkAnswer(item1);
                 break;
-            case 2: if (item2.isChecked()){
-                qm.incScore();
-            }
+            case 2:
+                checkAnswer(item2);
                 break;
         }
     }
+
+    private void checkAnswer(RadioButton item) {
+        if (item.isChecked()) {
+            qm.incScore();
+        }
+    }
+
     private void nextQuestion() {
         qm.incCurrentQuestion();
         updateData();

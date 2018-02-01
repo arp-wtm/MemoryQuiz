@@ -22,10 +22,8 @@ public class MainActivity extends AppCompatActivity {
   */
 
     public void setSecondScreen(View view) {
-       startActivity(new Intent(MainActivity.this, QuestionActivity.class));
+        startActivity(new Intent(MainActivity.this, QuestionActivity.class));
     }
-
-
 
 
 }
