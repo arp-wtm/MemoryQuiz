@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.antonella.memoryquiz.QuestionActivity">
+
+
+    <EditText
+        android:id="@+id/numQuestionPT"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:text="QUESTION NUMBER"
+        android:textAlignment="viewEnd" />
+
+    <EditText
+        android:id="@+id/questionET"
+        android:layout_width="match_parent"
+        android:layout_height="146dp"
+        android:ems="10"
+        android:inputType="textMultiLine" />
+
+    <RadioGroup
+        android:id="@+id/questionRadioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/answerRB0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RadioButton"
+            android:textAppearance="?android:textAppearanceMedium" />
+
+        <RadioButton
+            android:id="@+id/answerRB1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RadioButton"
+            android:textAppearance="?android:textAppearanceMedium" />
+
+        <RadioButton
+            android:id="@+id/answerRB2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RadioButton"
+            android:textAppearance="?android:textAppearanceMedium" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:onClick="doNext"
+        android:text="NEXT" />
+
+</LinearLayout>
